@@ -1,0 +1,28 @@
+app:
+  environment: development
+  data_dir: ./data
+  log_dir: ./logs
+
+local_ai:
+  provider: ollama
+  base_url: http://127.0.0.1:11434
+  model: ""
+  enabled: true
+
+rag:
+  enabled: false
+  embedding_model: BAAI/bge-m3
+  top_k: 8
+  vector_store: chroma
+  collection: university_knowledge
+  production_writes_require_explicit_commit: true
+
+safety:
+  enabled: false
+  confirmation_timeout_seconds: 30
+  local_storage_only: true
+  notifications_enabled: false
+
+privacy:
+  cloud_enabled: false
+  send_private_context_to_cloud: false
